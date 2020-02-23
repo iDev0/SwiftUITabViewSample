@@ -10,7 +10,25 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, World!")
+        
+        TabView {
+            HomeView()
+                .tabItem {
+                    VStack {
+                        Image(systemName: "house.fill")
+                        Text("Home")
+                    }
+            }.tag(1)
+            
+            AboutView()
+                .tabItem {
+                    VStack {
+                        Image(systemName: "ellipsis.circle")
+                        Text("About")
+                    }
+            }.tag(2)
+        }.edgesIgnoringSafeArea(.top)
+        
     }
 }
 
